@@ -1,0 +1,87 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "termos-parceria-contratos-gestao",
+      "path": "data/termos-parceria-contratos-gestao.csv",
+      "profile": "tabular-data-resource",
+      "title": "Termos de Parceria e Contratos de Gestão",
+      "description": "Extrato dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com OSCIPs e Organizações Sociais",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/termos-parceria-contratos-gestao.yaml",
+      "dialect": "schemas/dialect.yaml"
+    },
+    {
+      "name": "aditivos",
+      "path": "data/aditivos.csv",
+      "profile": "tabular-data-resource",
+      "title": "Aditivos",
+      "description": "Aditivos dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com OSCIPs e Organizações Sociais",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/aditivos.yaml",
+      "dialect": "schemas/dialect.yaml"
+    },
+    {
+      "name": "repasses",
+      "path": "data/repasses.csv",
+      "profile": "tabular-data-resource",
+      "title": "Repasses",
+      "description": "Repasses dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com OSCIPs e Organizações Sociais",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/repasses.yaml",
+      "dialect": "schemas/dialect.yaml"
+    },
+    {
+      "name": "relatorios",
+      "path": "data/relatorios.csv",
+      "profile": "tabular-data-resource",
+      "title": "Relatórios",
+      "description": "Relatórios dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com OSCIPs e Organizações Sociais",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "schemas/relatorios.yaml",
+      "dialect": "schemas/dialect.yaml"
+    }
+  ],
+  "keywords": [
+    "contratos de gestão",
+    "termos de parceria",
+    "OSCIP",
+    "OS",
+    "termos aditivos",
+    "relatorios de avaliacao"
+  ],
+  "name": "termos-parceria-contratos-gestao",
+  "title": "Termos de Parceria e Contratos de Gestão",
+  "description": "Documentos dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com OSCIPs e Organizações Sociais",
+  "homepage":"http://www.planejamento.mg.gov.br/pagina/planejamento-e-orcamento/oscips-e-organizacoes-sociais",
+  "owner_org": "secretaria-de-estado-de-planejamento-e-gestao-seplag",
+  "version": "0.1.0",
+  "Frequência de atualização":"trimestral",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "contributors": [
+        {
+      "title": "Superintendência Central de Parcerias com o Terceiro Setor",
+      "role": "author",
+      "email": "oscip@planejamento.mg.gov.br"
+    },
+    {
+      "title": "Diretoria Central de Transparência Ativa",
+      "role": "maintainer",
+      "email": "transparencia@cge.mg.gov.br"
+    }
+  ]
+}

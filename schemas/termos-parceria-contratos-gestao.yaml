@@ -1,0 +1,125 @@
+fields:
+  - name: ID_INSTRUMENTO
+    type: string
+    format: default
+    title: Número do Instrumento
+    description: >-
+      Numeração do instrumento jurídico, estabelecida pela Secretaria de Estado
+      de Planejamento e Gestão
+    constraints:
+      pattern: (CG|TP)_\d{3}/\d{4}
+  - name: TIPO_INSTRUMENTO
+    type: string
+    format: default
+    title: Tipo de Instrumento
+    description: >-
+      Define se o instrumento jurídico celebrado é um Termo de Parceria ou um
+      Contrato de Gestão
+    constraints:
+      required: true
+      enum:
+        - Contrato de Gestão
+        - Termo de Parceria
+  - name: NUM_TERMO_CONTRATO
+    type: string
+    format: default
+    title: Número do Contrato ou Termo
+    description: >-
+      Numeração do instrumento jurídico, estabelecida pela Secretaria de Estado
+      de Planejamento e Gestão
+    constraints:
+      required: true
+      pattern: \d{3}/\d{4}
+  - name: ORGAO_ESTATAL_CODIGO
+    type: number
+    format: default
+    description: >-
+      Código da unidade orçamentária do órgão estadual signatário do instrumento
+      jurídico.
+    title: Código do Órgão Estatal
+    constraints:
+      required: true
+  - name: ORGAO_ESTATAL_NOME
+    type: string
+    format: default
+    title: Nome do Órgão Estatal
+    description: Nome institucional do órgão estadual signatário do instrumento jurídico.
+    constraints:
+      required: true
+  - name: ORGAO_ESTATAL_SIGLA
+    type: any
+    format: default
+    title: Sigla do Órgão Estatal
+    description: Sigla do Órgão Estadual
+    constraints:
+      required: true
+  - name: ENTIDADE_PARCEIRA_NOME
+    type: string
+    format: default
+    description: >-
+      Nome oficial da instituição do terceiro setor celebrante do instrumento
+      jurídico.
+    title: Nome da Entidade Parceira
+    constraints:
+      required: true
+  - name: ENTIDADE_PARCEIRA_SIGLA
+    type: string
+    format: default
+    title: Sigla da Entidade Parceira
+    description: Sigla da instituição do terceiro setor celebrante do instrumento jurídico.
+    constraints:
+      required: true
+  - name: ENTIDADE_PARCEIRA_CNPJ
+    type: string
+    format: default
+    title: CNPJ da Entidade Parceira
+    description: >-
+      Número de Cadastro Nacional de Pessoas Jurídicas da instituição do
+      terceiro setor celebrante do instrumento jurídico
+    constraints:
+      required: true
+  - name: OBJETO
+    type: string
+    format: default
+    title: Objeto
+    description: O objeto do instrumento jurídico
+    constraints:
+      required: true
+  - name: SITUACAO
+    type: string
+    format: default
+    title: Situação
+    description: Informa se o instrumento jurídico está vigente ou foi extinto.
+    constraints:
+      required: true
+  - name: DATA_INICIO_VIGENCIA
+    type: date
+    format: '%d/%m/%Y'
+    title: Data de Início da Vigência
+    description: >-
+      Data em que o instrumento jurídico se inicia, correspondente a data de
+      publicação do mesmo no Diário Oficial dos Poderes do Estado de Minas
+      Gerais.
+    constraints:
+      required: true
+  - name: DATA_FIM_VIGENCIA
+    type: date
+    format: '%d/%m/%Y'
+    title: Data Fim da Vigência
+    description: Data em que o instrumento jurídico terminou ou que será extinto.
+    constraints:
+      required: true
+  - name: URL_INTEGRA_TERMO_CONTRATO
+    type: string
+    format: uri
+    title: URL da íntegra do Contrato de Gestão ou Termo de Parceria
+    description: Link para acessar o Contrato de Gestão ou Termo de Parceria
+  - name: URL_DOCUMENTOS_TERMO_CONTRATO
+    type: string
+    format: uri
+    title: URL da Página dos documentos
+    description: >-
+      Link para acessar a página principal contendo os documentos do Contrato de
+      Gestão ou Termo de Parceria
+primaryKey: 
+ - ID_INSTRUMENTO

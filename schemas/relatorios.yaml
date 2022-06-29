@@ -1,0 +1,38 @@
+fields:
+  - name: ID_INSTRUMENTO
+    type: string
+    format: default
+    title: Número do Instrumento
+    description: >-
+      Numeração do instrumento jurídico, estabelecida pela Secretaria de Estado
+      de Planejamento e Gestão
+  - name: TIPO_DOCUMENTO
+    type: string
+    format: default
+    title: Tipo de Documento
+    description: Informa o tipo de relatório a que se refere
+  - name: DOCUMENTO
+    type: string
+    format: default
+    title: Documento
+    description: Informa o número do documento
+  - name: PERIODO_AVALIATORIO
+    type: string
+    format: default
+    title: Período Avaliatório
+    description: Informa o período da avaliação do relatório
+  - name: URL_DOCUMENTO
+    type: string
+    format: uri
+    title: URL do Documento
+    description: Link para acessar o relatório
+  - name: OBSERVACOES
+    type: string
+    format: default
+    title: Observações
+    description: Dados adicionais para esclarecer alguma informação sobre a linha
+foreignKeys:
+  - fields: ID_INSTRUMENTO
+    reference:
+      resource: termos-parceria-contratos-gestao
+      fields: ID_INSTRUMENTO

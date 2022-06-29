@@ -1,0 +1,42 @@
+fields:
+  - name: ID_INSTRUMENTO
+    type: string
+    format: default
+    title: Número do Instrumento
+    description: >-
+      Numeração do instrumento jurídico, estabelecida pela Secretaria de Estado
+      de Planejamento e Gestão.
+  - name: ANO
+    type: year
+    format: default
+    title: Ano
+    description: >-
+      Um dos anos em que a parceria esteve vigente. Ano de referência das
+      informações financeiras preenchidas nas colunas: “REPASSE_PREVISTO” e
+      “REPASSE_REALIZADO”.
+  - name: REPASSE_PREVISTO
+    type: number
+    format: default
+    title: Repasse Previsto
+    description: Valor total de recursos previstos para a execução da parceria, por ano.
+    groupChar: .
+    decimalChar: ','
+  - name: REPASSE_ATUALIZADO
+    type: number
+    format: default
+    title: Repasse Atualizado
+    description: >-
+      Valor total de recursos efetivamente disponibilizados para a execução da
+      parceria
+    groupChar: .
+    decimalChar: ','
+  - name: OBSERVACOES
+    type: string
+    format: default
+    title: Observações
+    description: Dados adicionais para esclarecer alguma informação sobre a linha
+foreignKeys:
+  - fields: ID_INSTRUMENTO
+    reference:
+      resource: termos-parceria-contratos-gestao
+      fields: ID_INSTRUMENTO
