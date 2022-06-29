@@ -1,4 +1,4 @@
-[![frictionless]()
+[![Atualização](https://github.com/Andrelamor/termos-parceria-contratos-gestao/actions/workflows/main.yaml/badge.svg)](https://github.com/Andrelamor/termos-parceria-contratos-gestao/actions/workflows/main.yaml)
 
 Este conjunto de dados apresenta um extrato de informações dos Termos de Parceria e Contratos de Gestão firmados pelos órgãos e entidades do Poder Executivo Estadual com entidades privadas sem fins lucrativos, qualificadas como Organizações Sociais (OS) ou Organizações da Sociedade Civil de Interesse Público (Oscip), para a execução de políticas públicas.
 
