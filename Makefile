@@ -25,9 +25,15 @@ update: ## Atualiza dataset e todos os seus recursos em instância do CKAN
 	@echo "Atualiza conjunto..."
 	@dpckan --datastore dataset update
 
+data: $(CSV_FILES)  ## Converte arquivos xlsx para csv
+
+$(CSV_FILES): data/%.csv : upload/%.xlsx
+	@echo Converting upload/$*.xlsx file to data/$*.csv...
+	@python ./scripts/convert_csv.py $< $@
+
 build: datapackage.json ## Constroi arquivo datapackage.json a partir do arquivo datapackage.yaml
 
-datapackage.json: datapackage.yaml $(SCHEMAS_FILES)
+datapackage.json: datapackage.yaml $(CSV_FILES) $(SCHEMAS_FILES)
 	@echo "Construindo datapackage.json..."
 	@frictionless describe --type package --json $< > $@
 
@@ -36,5 +42,6 @@ compare: ## Compara recursos existentes na pasta data com os incluído no datapa
 	@python ./scripts/compare.py
 
 clean: ## Limpa arquivos CSV e datapackage.json
-	@echo 'Limpando datapackage.json...'
+	@echo 'Limpando arquivos CSV e datapackage.json...'
+	@rm -rf data/*.csv
 	@rm -rf datapackage.json
