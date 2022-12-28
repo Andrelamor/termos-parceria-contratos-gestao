@@ -1,6 +1,6 @@
 include config.mk
 
-.PHONY: help start list validate create update data build compare clean
+.PHONY: help start list validate create update resource-create build compare clean
 
 help: ## Informa breve descrição dos comando
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' Makefile | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}'
@@ -31,6 +31,10 @@ $(CSV_FILES): data/%.csv : upload/%.xlsx
 	@echo Converting upload/$*.xlsx file to data/$*.csv...
 	@python ./scripts/convert_csv.py $< $@
 
+resource-create: ## Cria recursos em instância do CKAN
+	@echo "Criando no CKAN recursos inexistentes..."
+	@python ./scripts/create_resource.py $(CKAN_HOST)
+
 build: datapackage.json ## Constroi arquivo datapackage.json a partir do arquivo datapackage.yaml
 
 datapackage.json: datapackage.yaml $(CSV_FILES) $(SCHEMAS_FILES)
@@ -43,5 +47,4 @@ compare: ## Compara recursos existentes na pasta data com os incluído no datapa
 
 clean: ## Limpa arquivos CSV e datapackage.json
 	@echo 'Limpando arquivos CSV e datapackage.json...'
-	@rm -rf data/*.csv
 	@rm -rf datapackage.json
